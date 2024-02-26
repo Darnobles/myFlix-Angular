@@ -24,6 +24,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { GenreComponent } from './genre/genre.component';
 import { DirectorComponent } from './director/director.component';
 import { SynopsisComponent } from './synopsis/synopsis.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -60,7 +61,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     MatIconModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

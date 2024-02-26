@@ -1,1 +1,19 @@
-<p>genre works!</p>
+<mat-card *ngFor="let movie of movies;" style="flex: 0 0 calc(25% - 20px); margin: 10px; display: flex; flex-direction: column; align-items: center;">
+    <mat-card-header style="text-align: center;">
+    <mat-card-title>{{movie.title}}</mat-card-title>
+        <mat-card-subtitle>Genre: {{movie.genre.Name}}</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img src={{movie.imagePath}} alt= {{movie.title}} style="max-width: 300px; max-height: 300px;  align-self: center;"/> -->
+    <mat-card-content>Description: {{movie.genre.Description}}</mat-card-content>
+    <mat-card-actions style="text-align: center;">
+        <!-- <button
+            mat-button
+            color="primary"
+            routerLink="/movies"
+        >
+            Back
+        </button> -->
+        <mat-icon>favorite_border</mat-icon>
+    </mat-card-actions>
+</mat-card>
+
