@@ -1,3 +1,15 @@
+<mat-toolbar color="black">
+    <span>Welcome to Comic Flick!</span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Home</button>
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item>Log out</button>
+  </mat-menu>
+
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
     <mat-card *ngFor="let movie of movies;" style="flex: 0 0 calc(25% - 20px); margin: 10px; display: flex; flex-direction: column; align-items: center;">
         <mat-card-header style="text-align: center;">
