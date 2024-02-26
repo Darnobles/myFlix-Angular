@@ -5,9 +5,9 @@
     </button>
   </mat-toolbar>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>Home</button>
-    <button mat-menu-item>Profile</button>
-    <button mat-menu-item>Log out</button>
+    <button mat-menu-item routerLink="/movies">Home</button>
+    <button mat-menu-item routerLink="/profile">Profile</button>
+    <button mat-menu-item routerLink="/welcome">Log out</button>
   </mat-menu>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
@@ -21,18 +21,21 @@
             <button
                 mat-button
                 color="primary"
+                (click)="openGenreComponentDialog()"
             >
                 Genre
             </button>
             <button
                 mat-button
                 color="primary"
+                (click)="openDirectorDialog()"
             >
                 Director
             </button>
             <button
                 mat-button
                 color="primary"
+                (click)="openSynopsisComponentDialog()"
             >
                 Synopsis
             </button>

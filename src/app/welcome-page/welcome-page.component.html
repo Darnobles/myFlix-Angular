@@ -1,4 +1,26 @@
-<div class="main-page">
+<head>
+  <style>
+    body {
+        background-color: rgb(235, 144, 53);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .main-page {
+        text-align: center;
+    }
+
+    .custom-button {
+            background-color: #2d8a79;
+            color: white;
+        }
+</style>
+</head>
+<body>
+<div class="main-page" >
     <h1>
       Welcome to myFlix!
     </h1>
@@ -6,16 +28,17 @@
       mat-raised-button
       (click)="openUserRegistrationDialog()"
       style="margin-right: 10px;"
-      color="primary"
+      class="custom-button"
     >
       Sign Up
     </button>
     <button
       mat-raised-button
-      color="primary"
       (click)="openUserLoginDialog()"
       style="margin-right: 10px;"
+      class="custom-button"
     >
       Login
     </button>
   </div>
+</body>
