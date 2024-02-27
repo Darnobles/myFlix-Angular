@@ -7,7 +7,7 @@
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/movies">Home</button>
     <button mat-menu-item routerLink="/profile">Profile</button>
-    <button mat-menu-item routerLink="/welcome">Log out</button>
+    <button mat-menu-item routerLink="/welcome" (click)="logout()">Log out</button>
   </mat-menu>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
@@ -39,7 +39,7 @@
             >
                 Synopsis
             </button>
-            <mat-icon>favorite_border</mat-icon>
+            <mat-icon (click)="addFavoriteMovie()">favorite_border</mat-icon>
         </mat-card-actions>
     </mat-card>
 </div>

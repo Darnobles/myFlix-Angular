@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FetchApiDataService } from '../fetch-api-data.service'
+import { FetchApiDataService } from '../fetch-api-data.service';
 import { SynopsisComponent } from '../synopsis/synopsis.component';
-import { GenreComponent } from '../genre/genre.component';;
+import { GenreComponent } from '../genre/genre.component';
 import { DirectorComponent } from '../director/director.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -42,5 +42,13 @@ getMovies(): void {
     this.dialog.open(DirectorComponent, {
       width: '280px'
     });
+  }
+
+  addFavoriteMovie(): void {
+
+    }
+
+  logout(): void {
+
   }
 }
