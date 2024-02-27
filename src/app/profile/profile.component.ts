@@ -8,11 +8,14 @@ import { FetchApiDataService } from '../fetch-api-data.service';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
+
+  userData = { Username: '', Password: '', Email: '', Birthday: '', FavoriteMovies:[], };
+
   updateForm = new FormGroup({
-    userName: new FormControl('{user.Username}'),
-    password: new FormControl('{user.Password}'),
-    birthday: new FormControl('{user.Birthday}'),
-    email: new FormControl('{user.Email}'),
+    userName: new FormControl(''),
+    password: new FormControl(''),
+    birthday: new FormControl(''),
+    email: new FormControl(''),
   });
 
   movies: any[] = [];
@@ -20,7 +23,22 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFavoriteMovies();
+    this.getUser();
   }
+
+  getUser(): void {
+    this.fetchApiData.getUser().subscribe((resp: any) => {
+      this.userData.Username = resp;
+      this.userData.Password = resp;
+      this.userData.Birthday = resp;
+      this.userData.Email = resp;
+      this.userData.FavoriteMovies = resp;
+    },
+    (error) => {
+      console.error('Error fetching user data:', error);
+    }
+    )
+  };
 
   getFavoriteMovies(): void {
   //   this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
@@ -31,9 +49,9 @@ export class ProfileComponent implements OnInit {
   // }
 };
 
-updateUser(): void {
-
-};
+onSubmit() {
+  console.log(this.updateForm.value);
+}
 
 deleteUser(): void {
 

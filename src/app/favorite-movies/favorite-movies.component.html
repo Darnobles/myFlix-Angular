@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-header style="text-align: center;">
+    <mat-card-title>Do you want to add this movie to your favorites?</mat-card-title>
+    </mat-card-header>
+        <button
+            mat-button
+            color="primary"
+            (click)="addMovie()"
+        >
+            Yes
+        </button>
+        
+        <button
+        mat-button
+        color="primary"
+        routerLink="/movies"
+    >
+        No
+    </button>
+</mat-card>

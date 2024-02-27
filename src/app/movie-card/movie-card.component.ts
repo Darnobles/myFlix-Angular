@@ -4,6 +4,7 @@ import { SynopsisComponent } from '../synopsis/synopsis.component';
 import { GenreComponent } from '../genre/genre.component';
 import { DirectorComponent } from '../director/director.component';
 import { MatDialog } from '@angular/material/dialog';
+import { FavoriteMoviesComponent } from '../favorite-movies/favorite-movies.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -40,6 +41,12 @@ getMovies(): void {
 
   openDirectorDialog(): void {
     this.dialog.open(DirectorComponent, {
+      width: '280px'
+    });
+  }
+
+  openFavoriteMoviesComponentDialog(): void {
+    this.dialog.open(FavoriteMoviesComponent, {
       width: '280px'
     });
   }

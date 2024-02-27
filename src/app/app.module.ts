@@ -25,6 +25,7 @@ import { GenreComponent } from './genre/genre.component';
 import { DirectorComponent } from './director/director.component';
 import { SynopsisComponent } from './synopsis/synopsis.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FavoriteMoviesComponent } from './favorite-movies/favorite-movies.component';
 
 
 const appRoutes: Routes = [
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
     ProfileComponent,
     GenreComponent,
     DirectorComponent,
-    SynopsisComponent
+    SynopsisComponent,
+    FavoriteMoviesComponent
   ],
   imports: [
     BrowserModule,
