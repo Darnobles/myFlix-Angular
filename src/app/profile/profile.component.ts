@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FetchApiDataService } from '../fetch-api-data.service';
 
@@ -9,7 +9,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 export class ProfileComponent implements OnInit {
 
-  userData = { Username: '', Password: '', Email: '', Birthday: '', FavoriteMovies:[], };
+  @Input() userData = { Username: '', Password: '', Email: '', Birthday: '', FavoriteMovies:[], };
 
   updateForm = new FormGroup({
     userName: new FormControl(''),

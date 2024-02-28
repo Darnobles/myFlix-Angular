@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -11,7 +11,8 @@ import { FetchApiDataService } from '../fetch-api-data.service';
   styleUrls: ['./favorite-movies.component.scss'],
 })
 export class FavoriteMoviesComponent {
-  userData = { FavoriteMovies: [] };
+  
+  @Input() userData = { FavoriteMovies: [] };
 
   constructor(
     public dialog: MatDialog,
