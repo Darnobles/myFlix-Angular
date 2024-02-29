@@ -15,22 +15,22 @@
   <form [formGroup]="updateForm" class="form" (ngSubmit)="onSubmit()">
     <div>
       <label>Username</label>
-      <input formControlName="userName" type="text" class="form-control" [(ngModel)]="userData.Username" formControlName="Username">
+      <input formControlName="userName" type="text" class="form-control">
     </div>
 
     <div>
       <label>Password</label>
-      <input formControlName="password" type="text" class="form-control" [(ngModel)]="userData.Password" formControlName="Password">
+      <input formControlName="password" type="password" class="form-control">
     </div>
 
     <div>
       <label>Birthday</label>
-      <input formControlName="birthday" type="date" class="form-control" [(ngModel)]="userData.Birthday" formControlName="Birthday">
+      <input formControlName="birthday" type="date" class="form-control">
     </div>
 
     <div>
       <label>Email</label>
-      <input formControlName="email" type="email" class="form-control" [(ngModel)]="userData.Email" formControlName="Email">
+      <input formControlName="email" type="email" class="form-control">
     </div>
 
     <button class="btn btn-primary" type="submit">Update</button>

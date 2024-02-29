@@ -9,7 +9,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 export class ProfileComponent implements OnInit {
 
-  @Input() userData = { Username: '', Password: '', Email: '', Birthday: '', FavoriteMovies:[], };
+  @Input() userData: any = { Username: '', Password: '', Email: '', Birthday: '', FavoriteMovies:[], };
 
   updateForm = new FormGroup({
     userName: new FormControl(''),
@@ -18,36 +18,35 @@ export class ProfileComponent implements OnInit {
     email: new FormControl(''),
   });
 
-  movies: any[] = [];
   constructor(public fetchApiData: FetchApiDataService) {}
 
   ngOnInit(): void {
-    this.getFavoriteMovies();
     this.getUser();
+    this.getFavoriteMovies();
   }
 
   getUser(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
-      this.userData.Username = resp;
-      this.userData.Password = resp;
-      this.userData.Birthday = resp;
-      this.userData.Email = resp;
-      this.userData.FavoriteMovies = resp;
+      this.updateForm.patchValue({
+        userName: resp.Username,
+        password: resp.Password,
+        birthday: resp.Birthday,
+        email: resp.Email,
+      });
     },
     (error) => {
       console.error('Error fetching user data:', error);
-    }
-    )
-  };
+    });
+  }
 
   getFavoriteMovies(): void {
-  //   this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
-  //     this.user.FavoriteMovies = resp;
-  //     console.log(this.user.FavoriteMovies);
-  //     return this.user.FavoriteMovies;
-  //   });
-  // }
-};
+    this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
+      this.userData.FavoriteMovies = resp; // Assuming resp is an array of favorite movies
+    },
+    (error) => {
+      console.error('Error fetching favorite movies:', error);
+    });
+  }
 
 onSubmit() {
   console.log(this.updateForm.value);
